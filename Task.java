@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Task {
 
     private static long mergeAndCount(int[] arr, int l,
