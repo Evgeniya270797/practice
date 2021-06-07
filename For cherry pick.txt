@@ -145,3 +145,8 @@ public class Cinema {
 
     }
 }
+
+
+
+
+some unusefull information
