@@ -7,13 +7,13 @@ public class Task {
     {
 
 
-        
+        int[] left = Arrays.copyOfRange(arr, l, m + 1);
 
 
         int[] right = Arrays.copyOfRange(arr, m + 1, r + 1);
 
         int i = 0, j = 0, k = l;
-        long swaps = 0;
+                long swaps = 0;
 
         while (i < left.length && j < right.length) {
             if (left[i] <= right[j])
@@ -30,6 +30,31 @@ public class Task {
         return swaps;
     }
 
+
+    private static long mergeSortAndCount(int[] arr, int l,
+                                          int r)
+    {
+
+        long count = 0;
+
+        if (l < r) {
+            int m = (l + r) / 2;
+
+
+
+
+            count += mergeSortAndCount(arr, l, m);
+
+
+            count += mergeSortAndCount(arr, m + 1, r);
+
+
+            count += mergeAndCount(arr, l, m, r);
+        }
+
+        return count;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int length = scanner.nextInt();
@@ -42,6 +67,4 @@ public class Task {
         long count = mergeSortAndCount(array,0,length-1);
         System.out.println(count);
     }
-
-
 }
