@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class Cinema {
+    private static Scanner scanner;
+    private static int currentIncome = 0;
+    private static int totalIncome =0;
+    private static String[][] someArray;
+    private static int count = 0;
+    private static int seats=0;
+    private static int rows = 0;
+
+
+
+    public static void print() {
+        System.out.println("1. Show the seats");
+        System.out.println("2. Buy a ticket");
+        System.out.println("3. Statistics");
+        System.out.println("0. Exit");
+    }
+
+
+    public static void showTheFreeSeats(String[][] someArray) {
+        System.out.println("Cinema: ");
+        for (int i = 0; i < someArray.length; i++) {
+            for (int j = 0; j < someArray[i].length; j++) {
+                System.out.print(someArray[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    public static int countPrice(int row, int rows, int seats) {
+        int totalIncome = rows * seats * 10;
+        int ticketPrice = 0;
+
+        if (rows * seats <= 60) {
+            ticketPrice = 10;
+
+        } else if (rows * seats > 60 && rows % 2 == 0) {
+            if (row <= rows / 2) {
+                ticketPrice = 10;
+
+            } else {
+                ticketPrice = 8;
+
+            }
+
+        } else if (rows * seats > 60 && rows % 2 != 0) {
+            if (row <= rows / 2) {
+                ticketPrice = 10;
+            } else {
+                ticketPrice = 8;
+
+            }
+
+        }
+        return  ticketPrice;
+
+    }
