@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Task {
 
     private static long mergeAndCount(int[] arr, int l,
@@ -5,7 +7,7 @@ public class Task {
     {
 
 
-       
+        
 
 
         int[] right = Arrays.copyOfRange(arr, m + 1, r + 1);
