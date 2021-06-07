@@ -5,7 +5,7 @@ public class Task {
     {
 
 
-        int[] left = Arrays.copyOfRange(arr, l, m + 1);
+       
 
 
         int[] right = Arrays.copyOfRange(arr, m + 1, r + 1);
