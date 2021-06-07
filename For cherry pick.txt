@@ -109,3 +109,39 @@ public class Cinema {
             numberTwo();
         }
     }
+	public static void main(String[] args) {
+        scanner = new Scanner(System.in);
+        System.out.println("Enter the number of rows:");
+         rows = scanner.nextInt();
+        System.out.println("Enter the number of seats in each row:");
+        seats = scanner.nextInt();
+        someArray = new String[rows + 1][seats + 1];
+
+        calculateTotalPrice(rows,seats);
+
+        creatArray(someArray, rows, seats);
+
+
+        while (true) {
+            print();
+            int number = scanner.nextInt();
+            if (number == 1) {
+                showTheFreeSeats(someArray);
+            } else if (number == 2) {
+                numberTwo();
+
+            } else if (number == 3) {
+                System.out.println("Number of purchased tickets: " + count);
+                double percentage = (100.0 * count) / (rows * seats);
+                System.out.println("Percentage: " + String.format("%.2f",percentage) + "%");
+                System.out.println("Current income: " + "$" + currentIncome);
+                System.out.println("Total income: $" + totalIncome);
+
+
+            } else if (number == 0) {
+                break;
+            }
+        }
+
+    }
+}
